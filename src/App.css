@@ -1,3 +1,22 @@
+.main{
+display: flex;
+flex-direction: column;
+background-color: cornflowerblue;
+}
 #header{
-    background-color:aqua;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+}
+
+#body{
+    background-color: white;
+    margin: 1rem;
+
+}
+
+footer{
+    background-color: darkgray;
+    color: white;
 }
