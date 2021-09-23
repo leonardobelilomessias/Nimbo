@@ -1,17 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './componentes/Header';
-import Body from './componentes/Body';
-import Main from './componentes/Main';
+import { useState } from 'react';
+import GlobalStyle from '../src/styles/global'
+import SingIn from './pages/SingIn';
+
 function App() {
-  return (
-    
-      <Main className="main">
-       
-      </Main>
-      
-    
-  
+  return (  
+  <>
+  <SingIn>
+  </SingIn>
+  <GlobalStyle/>
+  </>
   );
 }
 
