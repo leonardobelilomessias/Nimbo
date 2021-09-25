@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import imgbackgroundSingin from "../../assets/background.svg"
+import imgSingup from '../../assets/Singup-back.svg'
 import { shade } from "polished"
 
 export const Container = styled.div`
@@ -65,7 +65,7 @@ max-width: 700px;
 ` 
 export const Background = styled.div`
 flex: 1;
-background: url(${imgbackgroundSingin}) no-repeat center;
+background: url(${imgSingup}) no-repeat center;
 background-size: cover;
 
 ` 

@@ -1,7 +1,8 @@
 import React from "react";
 import { Container,Content, Background } from "./style";
-import imgBackground from "../../assets/background.svg"
-import {FiLogIn} from "react-icons/fi"
+import {FiLogIn,FiMail,FiLock} from "react-icons/fi"
+import Input from "../../components/Input";
+import Button from "../../components/Button";
 
 export default function SingIn(){
   return(
@@ -14,9 +15,9 @@ export default function SingIn(){
         
         <form action="">
           <h1>Faça seu login</h1>
-          <input type="text" placeholder="E-mail" />
-          <input type="password" placeholder="Senha" />
-          <button type="submit">Entrar</button>
+          <Input placeholder="Email" icon={FiMail}/>
+          <Input placeholder="Senha" icon= {FiLock}/>
+          <Button type="submit">Entrar</Button>
           <a href="#">Esqueci minha senha</a>
         </form>
 
