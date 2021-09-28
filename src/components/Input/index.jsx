@@ -1,6 +1,8 @@
 import React, { useEffect,useRef,useState,useCallback } from "react";
-import { Container } from "./style";
+import { Container,Error } from "./style";
 import { useField } from "@unform/core";
+import { FiAlertCircle } from "react-icons/fi";
+import Tooltip from "../Tooltip";
 export default function Input({name,icon:Icon,...rest}){
   const [isFocused,setIsfocus] = useState(false)
   const inputRef = useRef(null)
@@ -30,7 +32,7 @@ const HandleBlur = useCallback(()=>{
   
   },[fieldName,registerField])
  return ( 
- <Container isFocused={isFocused} isField ={isFild}>
+ <Container isErrored={!!error} isFocused={isFocused} isField ={isFild}>
   {Icon && <Icon size={20}/>}
     <input 
     onFocus={HandlesFocus}
@@ -39,7 +41,10 @@ const HandleBlur = useCallback(()=>{
     ref= {inputRef}{...rest}
     
     />
-    {error}
+    {error && <Error title={error}>
+      <FiAlertCircle color="#c53030" size={20}>
+        </FiAlertCircle>
+        </Error>}
   </Container>)
   
 }

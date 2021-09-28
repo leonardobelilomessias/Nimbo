@@ -1,18 +1,19 @@
 import React,{useCallback,useRef} from "react";
 import { Container,Content, Background } from "./style";
-import {FiLogIn,FiMail,FiLock, FiUser, FiArrowLeft} from "react-icons/fi"
+import {FiLogIn,FiMail,FiLock, FiUser, FiArrowLeft,FiAlertCircle} from "react-icons/fi"
 import {Form} from '@unform/web'
 import {FormHandles } from "@unform/core"
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import * as Yup from "yup"
+import getValidation from "../../utils/getValidation";
 
 export default function Singup(){
   const formRef = useRef(null)
   console.log(formRef)
-
   const HandleSubmit = useCallback(async(data)=>{
     try{
+        formRef.current?.setErrors({})
         const schema = Yup.object().shape({
         name:Yup.string().required('Nome obrigatorio'),
         email: Yup.string().required('Email obrigatorio').email('Diigite um email valido'),
@@ -23,9 +24,8 @@ export default function Singup(){
       })
     }catch(err){
       console.log(err.errors)
-      formRef.current?.setErrors({
-        name:'nome obrigatoorio'
-      })
+      const errors = getValidation(err)
+      formRef.current?.setErrors(errors)
     } 
   },[])
   return(

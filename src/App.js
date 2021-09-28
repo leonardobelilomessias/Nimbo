@@ -6,8 +6,8 @@ import Singup from './pages/Singup'
 function App() {
   return (  
   <>
-  <Singup>
-  </Singup>
+  <SingIn>
+  </SingIn>
   <GlobalStyle/>
   </>
   );
