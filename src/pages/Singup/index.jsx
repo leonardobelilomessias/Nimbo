@@ -39,7 +39,7 @@ export default function Singup(){
           <h1>Faça seu Cadastro</h1>
           <Input name="name" placeholder="Nome" icon={FiUser}/>
           <Input name="email" placeholder="Email" icon={FiMail}/>
-          <Input name="password" placeholder="Senha" icon= {FiLock}/>
+          <Input name="password" type="password" placeholder="Senha" icon= {FiLock}/>
           <Button type="submit">Cadastrar</Button>
         </Form>
 
