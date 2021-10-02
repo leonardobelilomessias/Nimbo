@@ -8,12 +8,13 @@ import * as Yup from "yup"
 
 import getValidation from "../../utils/getValidation";
 import titulo from "../../assets/titulo.png"
-import {AuthContext} from "../../context/AuthContext";
+import {useAuth} from "../../hooks/AuthContext";
 
 export default function SingIn(){
   const formRef = useRef(null)
   //console.log(formRef)
-  const {singIn} = useContext(AuthContext)
+  const {singIn,user} = useAuth()
+  console.log(user)
   const HandleSubmit = useCallback(async(data)=>{
     try{
         formRef.current?.setErrors({})
